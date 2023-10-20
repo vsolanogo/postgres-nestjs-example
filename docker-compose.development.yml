@@ -1,0 +1,14 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    container_name: postgres_db
+    restart: always
+    environment:
+      - POSTGRES_DB=example
+      - POSTGRES_USER=vitalii
+      - POSTGRES_PASSWORD=vitalii
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"
